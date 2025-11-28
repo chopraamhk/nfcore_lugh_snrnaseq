@@ -9,4 +9,10 @@ conda install conda-forge::singularity
 conda install conda-forge::squashfs-tools
 ```
 
+sample1.csv looks like (expected number of nuclei can be changed based on targetted number of nuclei) 
+```
+sample,fastq_1,fastq_2,expected_cells
+sample,path/to/sample_I1.fastq.gz,path/to/sample_I2.fastq.gz,3000
+```
+
 
