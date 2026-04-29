@@ -16,3 +16,12 @@ sample,path/to/sample_I1.fastq.gz,path/to/sample_I2.fastq.gz,3000
 ```
 
 
+
+# container directory
+cd /data4/mchopra/genewiz_azenta/90-1155124233/analysis_mc/.apptainer/
+
+# Set the temporary cache location
+export APPTAINER_CACHEDIR="/data4/mchopra/genewiz_azenta/90-1155124233/analysis_mc/.apptainer/apptainer_cache"
+
+# Pull the image (this puts the file in your current folder)
+apptainer pull docker://nfcore/anndatar:20241129
