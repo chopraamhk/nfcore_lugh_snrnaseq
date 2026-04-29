@@ -9,19 +9,13 @@ conda install conda-forge::singularity
 conda install conda-forge::squashfs-tools
 ```
 
-sample1.csv looks like (expected number of nuclei can be changed based on targetted number of nuclei) 
+sample1.csv looks like (expected number of nuclei can be changed based on targeted number of nuclei) 
 ```
 sample,fastq_1,fastq_2,expected_cells
 sample,path/to/sample_I1.fastq.gz,path/to/sample_I2.fastq.gz,3000
 ```
 
-
-
-# container directory
+#might need to go to apptainer and set the temporary cache location and pull the Docker image
 cd /data4/mchopra/genewiz_azenta/90-1155124233/analysis_mc/.apptainer/
-
-# Set the temporary cache location
 export APPTAINER_CACHEDIR="/data4/mchopra/genewiz_azenta/90-1155124233/analysis_mc/.apptainer/apptainer_cache"
-
-# Pull the image (this puts the file in your current folder)
 apptainer pull docker://nfcore/anndatar:20241129
