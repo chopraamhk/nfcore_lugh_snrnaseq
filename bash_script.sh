@@ -14,4 +14,9 @@ module load apptainer
 conda activate nfcore
 
 #code
-nextflow run nf-core/scrnaseq -r 4.1.0 --input samplesheet.csv --outdir results_snrnaseq --genome GRCh38 --protocol 10XV2 --aligner cellranger -profile apptainer -c local.config_google --fasta /data4/mchopra/genewiz_azenta/90-1155124233/analysis_mc/GRCh38.primary_assembly.genome.fa.gz --gtf /data4/mchopra/genewiz_azenta/90-1155124233/analysis_mc/gencode.v44.annotation.gtf.gz -resume
+nextflow run nf-core/scrnaseq -r 4.1.0 --input samplesheet.csv --outdir results_snrnaseq --genome GRCh38 --protocol 10XV4 --aligner cellranger -profile apptainer -c local.config --fasta /data4/mchopra/genewiz_azenta/90-1155124233/analysis_mc/GRCh38.primary_assembly.genome.fa.gz --gtf /data4/mchopra/genewiz_azenta/90-1155124233/analysis_mc/gencode.v44.annotation.gtf.gz -resume
+
+#protocol - chemistry used for library preparation 
+#aligner - cellranger which is closer to 10x genomics protocol 
+#if you dont specify aligner, then By default (i.e. --aligner simpleaf), the pipeline uses piscem to perform pseudo-alignment of reads to the reference genome and Alevin-fry to perform the downstream BAM-level quantification. 
+#Then QC reports are generated with AlevinQC.
